@@ -18,8 +18,11 @@ class Entry:
 
 def parse(html_file):
     soup = BeautifulSoup(html_file, "html.parser")
-    for row in soup.find_all("tr"):
-        date = row.find(class_="js-date").find_all("span")[1].string.strip()
+
+    ledger_table = soup.find("table", class_="tenant-ledger-table")
+
+    for row in ledger_table.tbody.find_all("tr"):
+        date = row.find(class_="js-date").string.strip()
         description = row.find(class_="js-description").string.strip()
         paid_by = row.find(class_="js-paid-by").string.strip()
         charge = row.find(class_="js-charge").string.strip()
