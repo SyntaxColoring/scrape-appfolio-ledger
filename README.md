@@ -33,3 +33,6 @@ date      , description                    , paid_by , charge    , payment
    <img src="screenshots_for_readme/viewing_ledger.png" alt="" width=800>
 4. Save the page's HTML to a file. In Chrome, you can do **File** > **Save Page As...** and choose **Format: Webpage, HTML Only**. Alternatively, you can right-click, select **View Page Source,** and copy-paste.
 5. Run the script with the HTML file as input.
+   ```bash
+   ./scrape_appfolio_ledger input.html output.csv
+   ```
